@@ -10,6 +10,9 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+const projectsRouter = require('./routes/projects');
+app.use('/api/projects', projectsRouter);
+
 app.get('/', (req, res) => {
   res.json({ message: 'Mining GIS Platform API is running', status: 'ok' });
 });
